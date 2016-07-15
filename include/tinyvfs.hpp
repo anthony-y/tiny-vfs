@@ -25,4 +25,5 @@ public:
 	bool ReadTextFile(std::string virtualDir, std::string &outFileContents);
 
 	static TinyVFS* FS();
+	static void Close();
 };

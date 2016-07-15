@@ -9,6 +9,11 @@ TinyVFS* TinyVFS::FS()
     return TinyVFS::instance;
 }
 
+void TinyVFS::Close()
+{
+    if (TinyVFS::instance != nullptr) delete TinyVFS::instance;
+}
+
 std::vector<std::string> TinyVFS::GetPathAndFile(std::string filePath)
 {
     std::string path;

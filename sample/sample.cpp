@@ -29,5 +29,7 @@ int main(int argc, char **argv)
 
 	getchar();
 
+	TinyVFS::Close();
+
 	return 0;
 }
