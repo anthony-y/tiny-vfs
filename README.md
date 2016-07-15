@@ -17,7 +17,7 @@ git clone https://github.com/anthony-y/tiny-vfs.git
 Next, you need to include the Tiny VFS header file in your project, which is located under the tiny-vfs/include/directory.
 
 ```cpp
-#include "tiny-vfs/include/tinyvfs.hpp"
+#include <tinyvfs.hpp>
 ```
 
 To mount a directory:
@@ -65,7 +65,7 @@ Finally, to compile your code with Tiny VFS, you will need to link against the s
 To compile with g++:
 
 ```
-g++ -o yourexecutable.exe -std=c++11 yourfile.cpp tiny-vfs/lib/tinyvfs.a
+g++ -o yourexecutable.exe -std=c++11 yourfile.cpp -I tinyvfs/include/ -L tinyvfs/lib/ -l tinyvfs
 ```
 
 Check out the [samples](https://github.com/anthony-y/tiny-vfs/tree/master/sample) directory for a full example of usage.
