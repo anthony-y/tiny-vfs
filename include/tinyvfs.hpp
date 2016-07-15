@@ -14,7 +14,7 @@ class TinyVFS
 private:
 	std::map<std::string, std::vector<std::string>> mappedDirs;
 
-	std::vector<std::string> GetPathAndFile(std::string filePath);
+	std::string *GetPathAndFile(std::string filePath);
 	bool DoesFileExist(std::string filePath);
 
 	static TinyVFS *instance;

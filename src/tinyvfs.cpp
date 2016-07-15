@@ -14,12 +14,12 @@ void TinyVFS::Close()
     if (TinyVFS::instance != nullptr) delete TinyVFS::instance;
 }
 
-std::vector<std::string> TinyVFS::GetPathAndFile(std::string filePath)
+std::string *TinyVFS::GetPathAndFile(std::string filePath)
 {
     std::string path;
     std::string file;
 
-    std::vector<std::string> vec;
+    std::string arr[2];
 
     int endOfPathIndex = 0;
 
@@ -29,13 +29,10 @@ std::vector<std::string> TinyVFS::GetPathAndFile(std::string filePath)
             endOfPathIndex = c;
     }
 
-    path = filePath.substr(0, endOfPathIndex + 1);
-    file = filePath.substr(path.length(), filePath.length());
+    arr[0] = filePath.substr(0, endOfPathIndex + 1);
+    arr[1] = filePath.substr(path.length(), filePath.length());
 
-    vec.push_back(path);
-    vec.push_back(file);
-
-    return vec;
+    return arr;
 }
 
 bool TinyVFS::DoesFileExist(std::string filePath)
