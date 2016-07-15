@@ -65,7 +65,7 @@ Finally, to compile your code with Tiny VFS, you will need to link against the s
 To compile with g++:
 
 ```
-g++ -o yourexecutable.exe -std=c++11 yourfile.cpp tiny-vfs/lib/tinyvfs.a
+g++ -o yourexecutable.exe -std=c++11 yourfile.cpp -I tinyvfs/include/ -L tinyvfs/lib/ -l tinyvfs
 ```
 
 Check out the [samples](https://github.com/anthony-y/tiny-vfs/tree/master/sample) directory for a full example of usage.
