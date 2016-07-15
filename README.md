@@ -58,7 +58,7 @@ if (!TinyVFS::FS()->ReadTextFile("VIRTUAL/DIRECTORY/TEXTFILE.txt", fileContents)
 Make sure that you destroy the TinyVFS instance when you have finished with it by calling:
 
 ```cpp
-TinyVFS::FS()->Close();
+TinyVFS::Close();
 ```
 
 Finally, to compile your code with Tiny VFS, you will need to link against the static library located in tinyvfs/lib:
