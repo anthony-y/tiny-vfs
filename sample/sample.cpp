@@ -1,6 +1,7 @@
 #include <iostream>
 
-#include "../include/tinyvfs.hpp"
+//#include "../include/tinyvfs.hpp"
+#include <tinyvfs.hpp>
 
 int main(int argc, char **argv)
 {
