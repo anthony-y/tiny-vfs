@@ -14,7 +14,7 @@ First, you need to clone the Tiny VFS repository:
 git clone https://github.com/anthony-y/tiny-vfs.git
 ```
 
-Next, you need to include the Tiny VFS header file in your project, which is located under the tiny-vfs/include/ directory.
+Next, you need to include the Tiny VFS header file in your project, which is located under the tiny-vfs/include/directory.
 
 ```cpp
 #include "tiny-vfs/include/tinyvfs.hpp"
@@ -55,7 +55,7 @@ if (!TinyVFS::FS()->ReadTextFile("VIRTUAL/DIRECTORY/TEXTFILE.txt", fileContents)
 }
 ```
 
-Make sure that when you no longer need to use the VFS, you must call:
+Make sure that you destroy the TinyVFS instance when you have finished with it by calling:
 
 ```cpp
 TinyVFS::FS()->Close();
