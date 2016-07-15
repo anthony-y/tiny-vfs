@@ -1,17 +1,10 @@
 #include "../include/tinyvfs.hpp"
 
-TinyVFS* TinyVFS::instance = nullptr;
 
 TinyVFS* TinyVFS::FS()
 {
-    if (TinyVFS::instance == nullptr) TinyVFS::instance = new TinyVFS();
-
-    return TinyVFS::instance;
-}
-
-void TinyVFS::Close()
-{
-    if (TinyVFS::instance != nullptr) delete TinyVFS::instance;
+    static TinyVFS vfs;
+    return &vfs;
 }
 
 std::string *TinyVFS::GetPathAndFile(std::string filePath)
