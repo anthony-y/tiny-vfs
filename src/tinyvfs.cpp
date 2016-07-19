@@ -1,6 +1,5 @@
 #include "../include/tinyvfs.hpp"
 
-
 TinyVFS* TinyVFS::FS()
 {
     static TinyVFS vfs;
@@ -59,7 +58,7 @@ std::string TinyVFS::ResolvePhysicalDir(std::string virtualDir)
         if (DoesFileExist(pathAndFileName))
             physicalDir = pathAndFileName;
     }
-
+    
     return physicalDir;
 }
 
@@ -76,8 +75,7 @@ bool TinyVFS::ReadTextFile(std::string virtualDir, std::string &outFileContents)
     std::string contents;
     while(getline(fileHandle, data)) 
     {
-        contents += data;
-        contents.append("\n");
+        contents += (data + "\n");
     }
 
     outFileContents = contents;

@@ -14,7 +14,7 @@ First, you need to clone the Tiny VFS repository:
 git clone https://github.com/anthony-y/tiny-vfs.git
 ```
 
-Next, you need to include the Tiny VFS header file in your project, which is located under the tiny-vfs/include/directory.
+Next, you need to include the Tiny VFS header file in your project, which is located under the tiny-vfs/include directory.
 
 ```cpp
 #include <tinyvfs.hpp>
