@@ -51,8 +51,12 @@ This method returns a boolean value as to whether the read failed or not.
 if (!TinyVFS::FS()->ReadTextFile("Virtual/Directory/Text File.txt", fileContents))
 {
     std::cout << "Read failed!" << std::endl;
-    return  1;
+    return 1;
 }
+
+std::cout << "Read succeeded! File contents: " << fileContents << std::endl;
+
+return 0;
 ```
 
 Finally, to compile your code with Tiny VFS, you will need to link against the static library located in tiny-vfs/lib:
