@@ -1,4 +1,4 @@
-#include "../include/tinyvfs.hpp"
+#include "tinyvfs.hpp"
 
 TinyVFS* TinyVFS::FS()
 {
@@ -6,12 +6,9 @@ TinyVFS* TinyVFS::FS()
     return &vfs;
 }
 
-std::string *TinyVFS::GetPathAndFile(std::string filePath)
+VFSPath TinyVFS::GetPathAndFile(std::string filePath)
 {
-    std::string path;
-    std::string file;
-
-    std::string arr[2];
+    VFSPath result;
 
     int endOfPathIndex = 0;
 
@@ -21,10 +18,10 @@ std::string *TinyVFS::GetPathAndFile(std::string filePath)
             endOfPathIndex = c;
     }
 
-    arr[0] = filePath.substr(0, endOfPathIndex + 1);
-    arr[1] = filePath.substr(path.length(), filePath.length());
+    result.path = filePath.substr(0, endOfPathIndex + 1);
+    result.fileName = filePath.substr(result.path.length(), filePath.length());
 
-    return arr;
+    return result;
 }
 
 bool TinyVFS::DoesFileExist(std::string filePath)
@@ -48,8 +45,10 @@ std::string TinyVFS::ResolvePhysicalDir(std::string virtualDir)
 {
     std::string physicalDir;
 
-    auto virtualPath = GetPathAndFile(virtualDir)[0];
-    auto fileName = GetPathAndFile(virtualDir)[1];
+    auto pathAndFile = GetPathAndFile(virtualDir);
+
+    auto virtualPath = pathAndFile.path;
+    auto fileName = pathAndFile.fileName;
 
     for (auto &item : mappedDirs[virtualPath])
     {

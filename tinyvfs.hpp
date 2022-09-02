@@ -9,12 +9,17 @@
 #include <algorithm>
 #include <iterator>
 
+struct VFSPath {
+    std::string path;
+    std::string fileName;
+};
+
 class TinyVFS
 {
 private:
 	std::map<std::string, std::vector<std::string>> mappedDirs;
 
-	std::string *GetPathAndFile(std::string filePath);
+    VFSPath GetPathAndFile(std::string filePath);
 	bool DoesFileExist(std::string filePath);
 
 	

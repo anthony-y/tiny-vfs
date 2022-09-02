@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include <tinyvfs.hpp>
+#include "../tinyvfs.hpp"
 
 int main(int argc, char **argv)
 {
@@ -26,6 +26,8 @@ int main(int argc, char **argv)
 	std::cout << "some file.txt contents: " << someFileTxt << std::endl;
 	std::cout << "mypasswords.txt contents: " << std::endl << fakePasswordsTxt << std::endl;
 	std::cout << "some other file.txt contents: " << std::endl << someOtherFileTxt;
+
+    std::cout << "Press enter to exit..." << std::endl;
 
 	getchar();
 

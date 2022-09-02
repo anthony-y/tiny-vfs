@@ -13,11 +13,10 @@ First, you need to clone the Tiny VFS repository:
 ```
 git clone https://github.com/anthony-y/tiny-vfs.git
 ```
-
-Next, you need to include the Tiny VFS header file in your project, which is located under the tiny-vfs/include directory.
+Next, move the tinyvfs source files into a suitable location. You will compile the library into your project as if it were part of your own codebase:
 
 ```cpp
-#include <tinyvfs.hpp>
+#include "tinyvfs.hpp"
 ```
 
 To mount a directory:
@@ -59,11 +58,10 @@ std::cout << "Read succeeded! File contents: " << fileContents << std::endl;
 return 0;
 ```
 
-Finally, to compile your code with Tiny VFS, you will need to link against the static library located in tiny-vfs/lib:
-To compile with g++:
+To compile, just build the .cpp file into your binary:
 
 ```
-g++ -o yourexecutable.exe -std=c++11 yourfile.cpp -I tinyvfs/include/ -L tinyvfs/lib/ -l tinyvfs
+g++ -o yourexecutable.exe -std=c++11 yourfile.cpp tinyvfs.cpp
 ```
 
 Check out the [samples](https://github.com/anthony-y/tiny-vfs/tree/master/sample) directory for a full example of usage.
